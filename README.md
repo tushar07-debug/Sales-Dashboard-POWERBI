@@ -25,7 +25,7 @@ This project was created to:
 
 ### 🔮 Forecasting Panel
 
-![Forecast](./DAXTABLEFORECASTING.png)
+![Forecast](./DAX - TABLE FORECASTING.png)
 
 
 
