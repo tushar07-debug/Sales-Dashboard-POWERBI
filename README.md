@@ -25,8 +25,7 @@ This project was created to:
 
 ### 🔮 Forecasting Panel
 
-![Forecast]([./DAX - TABLE FORECASTING.png](https://github.com/tushar07-debug/Sales-Dashboard-POWERBI/blob/main/DAX%20-%20TABLE%20FORECASTING.png))
-
+![DAX Table Forecasting](https://raw.githubusercontent.com/tushar07-debug/Sales-Dashboard-POWERBI/main/DAX%20-%20TABLE%20FORECASTING.png)
 
 
 > 📌 These images are directly linked from the repository root.
