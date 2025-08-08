@@ -1,62 +1,70 @@
 # 📊 Power BI Sales Dashboard Project
 
-![Power BI Logo](https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg)
-
-Welcome to the **Sales Dashboard Power BI Project**! This interactive dashboard leverages **Power BI**, **DAX queries**, and **Sales Forecasting techniques** to provide deep insights into business performance and trends.
+Welcome to the **Power BI Sales Dashboard Project**, an advanced business intelligence dashboard built using **Power BI Desktop**, **DAX**, and **Sales Forecasting techniques**. It empowers organizations to analyze sales data, visualize KPIs, and forecast future trends interactively.
 
 ---
 
-## 🛠️ Project Overview
+## 🔍 Project Overview
 
-This project is designed to analyze, visualize, and forecast sales data using **Power BI Desktop**. It includes:
+This project was created to:
 
-- Creating data models using **DAX (Data Analysis Expressions)**
-- Designing **visually rich interactive dashboards**
-- Implementing **time-series sales forecasting**
-- Exporting dashboards for sharing and collaboration
+- Analyze historical sales data  
+- Use **DAX queries** for KPIs, calculations, and forecasting  
+- Create a professional, interactive **Power BI dashboard**  
+- Provide exportable reports for business presentations  
 
-> 📁 Tools Used: Power BI Desktop | DAX | Excel | SQL (optional)
+> 📌 Tools Used: Power BI Desktop, DAX, Excel, Forecast Visuals
 
 ---
 
-## 📸 Dashboard Preview
+## 🖼️ Dashboard Screenshots
 
-| 📈 Dashboard View | 📅 Forecast Panel 
-|------------------|------------------|----------------------|
-| ![Main Dashboard](./assets/dashboard-main.png) | ![Forecast](./assets/forecast.png)
+### 📈 Main Sales Dashboard
+
+![Main Dashboard](./SUPERSTORE.png)
+
+### 🔮 Forecasting Panel
+
+![Forecast](./DAXTABLEFORECASTING.png)
+
+
+
+> 📌 These images are directly linked from the repository root.
 
 ---
 
 ## ✨ Features
 
-- ✅ **Interactive Filters** for Region, Category, Year
-- ✅ **KPI Cards** showing Revenue, Profit, Quantity
-- ✅ **Forecasting Model** using built-in forecasting & DAX
-- ✅ **Dynamic DAX Tables** & calculated columns
-- ✅ **Drill-down Reports** by Product, Sub-category
-- ✅ **Responsive Design** for optimal viewing
-- ✅ **Export to PDF/PPT** for presentations
-- ✅ **Data Refresh** support for real-time reports
+- ✅ Real-time KPIs (Revenue, Profit, Quantity)
+- ✅ Interactive Filters (Region, Year, Category)
+- ✅ Custom DAX Measures & Calculated Tables
+- ✅ Sales Forecasting (Rolling Average + Native Forecast)
+- ✅ Drill-down Charts & Tooltip-based Interactions
+- ✅ Export to PDF & PPT for reports
+- ✅ Mobile/Responsive View Compatible
+- ✅ Clean & Modern UI
 
 ---
 
-## 🧠 DAX Queries Used
-
-> Here are some key DAX formulas that power the dashboard:
+## 🧠 DAX Measures
 
 ```dax
 -- Total Sales
 Total Sales = SUM(Sales[Sales Amount])
 
--- Profit Margin %
+-- Profit Margin
 Profit Margin % = DIVIDE(SUM(Sales[Profit]), SUM(Sales[Sales Amount]))
 
--- Sales Forecasting using DAX (Rolling Average)
-Rolling Sales Forecast = 
+-- Forecast with Rolling 3-Month Average
+Rolling Forecast = 
     AVERAGEX(
         DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -3, MONTH),
         [Total Sales]
     )
 
--- Dynamic Year Filter
-SelectedYear = SELECTEDVALUE('Date'[Year])
+-- Year-over-Year Growth
+YoY Growth = 
+    DIVIDE(
+        [Total Sales] - CALCULATE([Total Sales], SAMEPERIODLASTYEAR('Date'[Date])),
+        CALCULATE([Total Sales], SAMEPERIODLASTYEAR('Date'[Date]))
+    )
